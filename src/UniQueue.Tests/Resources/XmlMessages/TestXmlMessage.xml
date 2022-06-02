@@ -1,0 +1,97 @@
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+	  <ns2:Get 
+		xmlns="urn://x-artefacts/types/basic/1.1" 
+		xmlns:ns2="urn://x-artefacts/services/message-exchange/types/1.1" 
+		xmlns:ns3="urn://x-artefacts/services/message-exchange/types/faults/1.1">
+		 <ns2:RequestMessage>
+			<ns2:Request Id="SIGNED_BY_USER">
+			   <ns2:SenderProvidedRequestData Id="SIGNED_BY_CONSUMER">
+				  <ns2:MessageID>0e8cfc01-5e81-11e4-a9ff-d4c9eff07b77</ns2:MessageID>
+				  <MessagePrimaryContent>
+					 <ns1:BreachRequest Id="PERSONAL_SIGNATURE" xmlns:ns1="urn://x-artefacts/breach/root/1.0" xmlns="urn://x-artefacts/services/message-exchange/types/1.1" xmlns:ns="urn://x-artefacts/services/message-exchange/types/1.1" xmlns:ns2="urn://x-artefacts/breach/commons/1.0" xmlns:ns3="urn://x-artefacts/supplementary/commons/1.0.1">
+						<ns1:Governance>
+						   <ns2:Name>AAA</ns2:Name>
+						</ns1:Governance>
+					 </ns1:BreachRequest>
+				  </MessagePrimaryContent>
+				  <RefAttachmentHeaderList>
+					 <RefAttachmentHeader>
+						<uuid>04a5bc90-5e81-11e4-a9ff-d4c9eff07b77</uuid>
+						<Hash>VpT3sc999CJI8TVYX35ZZfXpc/dCWO5e1MgoUg8YiJA=</Hash>
+						<MimeType>image/jpeg</MimeType>
+						<SignaturePKCS7>
+						   <xop:Include href="cid:41f0fe5e-3e73-4f4a-bf67-793b5d3369b2@example.jaxws.sun.com" xmlns:xop="http://www.w3.org/2004/08/xop/include"/>
+						</SignaturePKCS7>
+					 </RefAttachmentHeader>
+				  </RefAttachmentHeaderList>
+			   </ns2:SenderProvidedRequestData>
+			   <ns2:MessageMetadata>
+				  <ns2:MessageType>REQUEST</ns2:MessageType>
+				  <ns2:Sender>
+					 <ns2:Mnemonic>X</ns2:Mnemonic>
+					 <ns2:HumanReadableName>System1</ns2:HumanReadableName>
+				  </ns2:Sender>
+				  <ns2:SendingTimestamp>2014-10-28T13:01:52.208+04:00</ns2:SendingTimestamp>
+				  <ns2:Recipient>
+					 <ns2:Mnemonic>xxx</ns2:Mnemonic>
+					 <ns2:HumanReadableName>System2</ns2:HumanReadableName>
+				  </ns2:Recipient>
+				  <ns2:DeliveryTimestamp>2014-10-28T13:07:35.734+04:00</ns2:DeliveryTimestamp>
+			   </ns2:MessageMetadata>
+			   <FSAttachmentsList>
+				  <FSAttachment>
+					 <uuid>04a5bc90-5e81-11e4-a9ff-d4c9eff07b77</uuid>
+					 <UserName>User</UserName>
+					 <Password>Password</Password>
+					 <FileName>test.tmp</FileName>
+				  </FSAttachment>
+			   </FSAttachmentsList>
+			   <ns2:ReplyTo>3219|0e8cfc01-5e81-11e4-a9ff-d4c9eff07b77</ns2:ReplyTo>
+			   <ns2:SenderInformationSystemSignature>
+				  <ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+					 <ds:SignedInfo>
+						<ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+						<ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more"/>
+						<ds:Reference URI="#SIGNED_BY_CONSUMER">
+						   <ds:Transforms>
+							  <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+						   </ds:Transforms>
+						   <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more"/>
+						   <ds:DigestValue>XXX</ds:DigestValue>
+						</ds:Reference>
+					 </ds:SignedInfo>
+					 <ds:SignatureValue>XXX</ds:SignatureValue>
+					 <ds:KeyInfo>
+						<ds:X509Data>
+						   <ds:X509Certificate>XXX</ds:X509Certificate>
+						</ds:X509Data>
+					 </ds:KeyInfo>
+				  </ds:Signature>
+			   </ns2:SenderInformationSystemSignature>
+			</ns2:Request>
+			<ns2:USERSignature>
+			   <ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+				  <ds:SignedInfo>
+					 <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+					 <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more"/>
+					 <ds:Reference URI="#SIGNED_BY_USER">
+						<ds:Transforms>
+						   <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+						</ds:Transforms>
+						<ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more"/>
+						<ds:DigestValue>XXX</ds:DigestValue>
+					 </ds:Reference>
+				  </ds:SignedInfo>
+				  <ds:SignatureValue>XXX</ds:SignatureValue>
+				  <ds:KeyInfo>
+					 <ds:X509Data>
+						<ds:X509Certificate>XXX</ds:X509Certificate>
+					 </ds:X509Data>
+				  </ds:KeyInfo>
+			   </ds:Signature>
+			</ns2:USERSignature>
+		 </ns2:RequestMessage>
+	  </ns2:Get>
+   </S:Body>
+</S:Envelope>
